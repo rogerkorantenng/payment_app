@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</head>
+<body>
+    <h1>Place Your Order</h1>
+    
+    <form action="/order" method="POST">
+        <label for="address">Delivery Address:</label><br>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="product_name">Product Name:</label><br>
+        <input type="text" id="product_name" name="product_name" required><br><br>
+
+        <label for="product_price">Product Price ($):</label><br>
+        <input type="number" id="product_price" name="product_price" step="0.01" required><br><br>
+
+        <input type="submit" value="Place Order">
+    </form>
+
+    <p><a href="/logout">Logout</a></p>
+</body>
+</html>
